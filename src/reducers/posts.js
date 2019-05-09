@@ -29,13 +29,18 @@ export default function posts(state={}, action={type: ''}) {
         break;
         case ACTION_UPDATE_POST:
         // const { id, title, content } = action.payload;
+        const postToUpdate = state[action.payload.id];
+        if (postToUpdate){
             return {
                 ...state,
                 [action.payload.id]: {
-                    title: action.payload.title || state[action.payload.id].title,
-                    content: action.payload.content || state[action.payload.id].content,
+                    title: action.payload.title || postToUpdate.title,
+                    content: action.payload.content || postToUpdate.content,
                 }
             };
+        } else {
+            return state;
+        }
         break;
         default:
             return state;
