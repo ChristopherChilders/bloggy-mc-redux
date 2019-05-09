@@ -12,4 +12,5 @@ const mapStateToProps = (state) => {
 
 const makeBlogDetailSmart = connect(mapStateToProps);
 const SmartBlogDetail = makeBlogDetailSmart(BlogDetail);
+
 export default SmartBlogDetail;
