@@ -5,7 +5,7 @@ export const ACTION_DELETE_POST = 'ACTION_DELETE_POST';
 
 
 // Action Creators
-export function createPost(data){
+export function createPost(payload){
     // assumes that the `data` argument looks like this:
     // {
     //     title: 'loremipsum',
@@ -16,6 +16,7 @@ export function createPost(data){
         payload
     };
 };
+window.createPost = createPost;
 
 export function updatePost(){
 
