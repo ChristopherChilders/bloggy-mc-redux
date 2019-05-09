@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function BlogList({posts}){
+export default function BlogList({posts, handleClick}){
     // Helper function implicitly returns a <li>
 
     // If we want the IDs as well as the blog posts, we should get an array of the Ids (using Object.keys).
@@ -8,7 +8,9 @@ export default function BlogList({posts}){
     // With each id, we can access the blog post in the posts object.
     const listItems = Object.keys(posts).map(id => {
         const theBlogPost = posts[id];
-        return <li>{theBlogPost.title} - {id}</li>
+        return <li onClick={() => {
+            handleClick(id);
+        }}>{theBlogPost.title} - {id}</li>
     });
     return (
         <ol>
