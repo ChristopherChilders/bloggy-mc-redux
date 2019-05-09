@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import BlogList from '../components/BlogList;'
+import BlogList from '../components/BlogList';
 
 // translate redux state into react props
 const mapStateToProps = (state) => {
